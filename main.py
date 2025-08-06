@@ -1,6 +1,6 @@
 import os
 import telebot
-from openai import OpenAI
+from openrouter import OpenAI
 from dotenv import load_dotenv
 
 # Загружаем переменные из .env
@@ -16,8 +16,8 @@ client = OpenAI(
     api_key=OPENROUTER_API_KEY,
     base_url="https://openrouter.ai/api/v1",
     default_headers={
-        "HTTP-Referer": "https://daldobro.xyz",  # можно поменять на свой сайт
-        "X-Title": "DALDOBROBot"
+        "HTTP-Referer": "https://daldobro.xyz",  # можно свой сайт
+        "X-Title": "DALDOBROBOT"
     }
 )
 
@@ -38,5 +38,5 @@ def handle_message(message):
 
 # Запуск бота
 if __name__ == "__main__":
-    print("DALDOBROBot запущен через OpenRouter")
+    print("DALDOBROBOT запущен через OpenRouter")
     bot.polling(non_stop=True, skip_pending=True)
